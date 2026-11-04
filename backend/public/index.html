@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="mn">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>OctoLearn Админ</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐙</text></svg>" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/admin.css" />
+    <script>
+      // Apply the saved theme before first paint (default: light). See js/theme.js.
+      (function () {
+        var mode = 'light';
+        try { mode = localStorage.getItem('octolearn.admin.theme') || 'light'; } catch (e) {}
+        if (mode !== 'system') document.documentElement.setAttribute('data-theme', mode);
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <div id="toasts" class="toasts" aria-live="polite"></div>
+    <script type="module" src="/js/main.js"></script>
+  </body>
+</html>

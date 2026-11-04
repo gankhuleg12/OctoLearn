@@ -1,0 +1,300 @@
+{
+  "course": {
+    "id": "eng-a1",
+    "title": "Англи хэл — Анхан шат",
+    "description": "Өдөр тутмын англи хэлний үндсийг богино видео хичээлээр эзэмшинэ."
+  },
+  "units": [
+    {
+      "id": "u1",
+      "title": "Бүлэг 1: Танилцах",
+      "description": "Мэндлэх, өөрийгөө танилцуулах, энгийн үгс.",
+      "lessons": [
+        {
+          "id": "u1-l1",
+          "title": "Мэндчилгээ",
+          "description": "Hello, Hi, Good morning — өдрийн цагаас хамаарсан мэндчилгээ.",
+          "videoUrl": "https://download.samplelib.com/mp4/sample-10s.mp4",
+          "durationSec": 10
+        },
+        {
+          "id": "u1-l2",
+          "title": "Өөрийгөө танилцуулах",
+          "description": "My name is…, I am from… — нэр, гарал үүслээ хэлэх.",
+          "videoUrl": "https://test-videos.co.uk/vids/bigbuckbunny/mp4/h264/360/Big_Buck_Bunny_360_10s_1MB.mp4",
+          "durationSec": 10
+        },
+        {
+          "id": "u1-l3",
+          "title": "Тоо 1–10",
+          "description": "One-ээс ten хүртэлх тоог зөв дуудаж сурна.",
+          "videoUrl": "https://download.samplelib.com/mp4/sample-15s.mp4",
+          "durationSec": 15
+        },
+        {
+          "id": "u1-l4",
+          "title": "Өнгөнүүд",
+          "description": "Red, blue, green — үндсэн өнгөнүүдийн нэр.",
+          "videoUrl": "https://test-videos.co.uk/vids/jellyfish/mp4/h264/360/Jellyfish_360_10s_1MB.mp4",
+          "durationSec": 10
+        },
+        {
+          "id": "u1-l5",
+          "title": "Гэр бүл",
+          "description": "Mother, father, sister, brother — гэр бүлийн гишүүд.",
+          "videoUrl": "https://download.samplelib.com/mp4/sample-20s.mp4",
+          "durationSec": 20
+        }
+      ],
+      "quiz": {
+        "id": "u1-quiz",
+        "title": "Бүлэг 1-ийн шалгалт",
+        "passPercent": 60,
+        "questions": [
+          {
+            "id": "u1-q1",
+            "text": "\"Hello\" гэдэг ямар утгатай вэ?",
+            "options": [
+              "Баяртай",
+              "Сайн байна уу",
+              "Баярлалаа"
+            ],
+            "answerIndex": 1
+          },
+          {
+            "id": "u1-q2",
+            "text": "\"My name is Bold\" гэдгийг орчуулна уу.",
+            "options": [
+              "Намайг Болд гэдэг",
+              "Би Болдын найз",
+              "Болд хаана байна?"
+            ],
+            "answerIndex": 0
+          },
+          {
+            "id": "u1-q3",
+            "text": "\"Seven\" гэдэг хэд вэ?",
+            "options": [
+              "6",
+              "9",
+              "7"
+            ],
+            "answerIndex": 2
+          },
+          {
+            "id": "u1-q4",
+            "text": "\"Цэнхэр\" өнгийг англиар юу гэх вэ?",
+            "options": [
+              "Blue",
+              "Green",
+              "Red"
+            ],
+            "answerIndex": 0
+          },
+          {
+            "id": "u1-q5",
+            "text": "\"Sister\" гэдэг хэн бэ?",
+            "options": [
+              "Ах",
+              "Эгч / дүү охин",
+              "Аав"
+            ],
+            "answerIndex": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "u2",
+      "title": "Бүлэг 2: Өдөр тутам",
+      "description": "Цаг, хоол хүнс, гэр орны тухай ярих.",
+      "lessons": [
+        {
+          "id": "u2-l1",
+          "title": "Цаг хэлэх",
+          "description": "What time is it? — цаг асууж, хариулах.",
+          "videoUrl": "https://test-videos.co.uk/vids/sintel/mp4/h264/360/Sintel_360_10s_1MB.mp4",
+          "durationSec": 10
+        },
+        {
+          "id": "u2-l2",
+          "title": "Хоол хүнс",
+          "description": "Bread, milk, apple — дэлгүүрт хэрэгтэй үгс.",
+          "videoUrl": "https://download.samplelib.com/mp4/sample-10s.mp4",
+          "durationSec": 10
+        },
+        {
+          "id": "u2-l3",
+          "title": "Гэр орон",
+          "description": "Kitchen, bedroom, window — гэрийн өрөө, эд зүйлс.",
+          "videoUrl": "https://test-videos.co.uk/vids/bigbuckbunny/mp4/h264/360/Big_Buck_Bunny_360_10s_1MB.mp4",
+          "durationSec": 10
+        },
+        {
+          "id": "u2-l4",
+          "title": "Хувцас",
+          "description": "Shirt, shoes, jacket — хувцасны нэрс.",
+          "videoUrl": "https://download.samplelib.com/mp4/sample-15s.mp4",
+          "durationSec": 15
+        },
+        {
+          "id": "u2-l5",
+          "title": "Цаг агаар",
+          "description": "It's sunny / rainy / cold — цаг агаарыг тайлбарлах.",
+          "videoUrl": "https://test-videos.co.uk/vids/jellyfish/mp4/h264/360/Jellyfish_360_10s_1MB.mp4",
+          "durationSec": 10
+        }
+      ],
+      "quiz": {
+        "id": "u2-quiz",
+        "title": "Бүлэг 2-ын шалгалт",
+        "passPercent": 60,
+        "questions": [
+          {
+            "id": "u2-q1",
+            "text": "\"What time is it?\" гэдэг юу гэсэн үг вэ?",
+            "options": [
+              "Хэдэн цаг болж байна?",
+              "Чи хаана байна?",
+              "Өнөөдөр хэдэн бэ?"
+            ],
+            "answerIndex": 0
+          },
+          {
+            "id": "u2-q2",
+            "text": "\"Сүү\" гэдгийг англиар юу гэх вэ?",
+            "options": [
+              "Bread",
+              "Milk",
+              "Water"
+            ],
+            "answerIndex": 1
+          },
+          {
+            "id": "u2-q3",
+            "text": "\"Kitchen\" бол аль өрөө вэ?",
+            "options": [
+              "Унтлагын өрөө",
+              "Угаалгын өрөө",
+              "Гал тогоо"
+            ],
+            "answerIndex": 2
+          },
+          {
+            "id": "u2-q4",
+            "text": "\"Shoes\" гэдэг юу вэ?",
+            "options": [
+              "Гутал",
+              "Малгай",
+              "Цамц"
+            ],
+            "answerIndex": 0
+          },
+          {
+            "id": "u2-q5",
+            "text": "\"It's rainy\" гэдэг ямар цаг агаар вэ?",
+            "options": [
+              "Нартай",
+              "Бороотой",
+              "Цастай"
+            ],
+            "answerIndex": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "u3",
+      "title": "Бүлэг 3: Аялал",
+      "description": "Тээвэр, чиглэл асуух, зочид буудал.",
+      "lessons": [
+        {
+          "id": "u3-l1",
+          "title": "Тээврийн хэрэгсэл",
+          "description": "Bus, train, plane — тээврийн төрлүүд.",
+          "videoUrl": "https://download.samplelib.com/mp4/sample-30s.mp4",
+          "durationSec": 30
+        },
+        {
+          "id": "u3-l2",
+          "title": "Чиглэл асуух",
+          "description": "Where is…? Turn left / right — зам асуух.",
+          "videoUrl": "https://test-videos.co.uk/vids/sintel/mp4/h264/360/Sintel_360_10s_1MB.mp4",
+          "durationSec": 10
+        },
+        {
+          "id": "u3-l3",
+          "title": "Зочид буудал",
+          "description": "I have a reservation — өрөө захиалах, бүртгүүлэх.",
+          "videoUrl": "https://download.samplelib.com/mp4/sample-20s.mp4",
+          "durationSec": 20
+        },
+        {
+          "id": "u3-l4",
+          "title": "Дэлгүүр хэсэх",
+          "description": "How much is it? — үнэ асуух, худалдан авах.",
+          "videoUrl": "https://test-videos.co.uk/vids/bigbuckbunny/mp4/h264/360/Big_Buck_Bunny_360_10s_1MB.mp4",
+          "durationSec": 10
+        },
+        {
+          "id": "u3-l5",
+          "title": "Ресторанд",
+          "description": "Can I have the menu, please? — хоол захиалах.",
+          "videoUrl": "https://download.samplelib.com/mp4/sample-15s.mp4",
+          "durationSec": 15
+        }
+      ],
+      "quiz": {
+        "id": "u3-quiz",
+        "title": "Бүлэг 3-ын шалгалт",
+        "passPercent": 60,
+        "questions": [
+          {
+            "id": "u3-q1",
+            "text": "\"Train\" гэдэг юу вэ?",
+            "options": [
+              "Онгоц",
+              "Галт тэрэг",
+              "Автобус"
+            ],
+            "answerIndex": 1
+          },
+          {
+            "id": "u3-q2",
+            "text": "\"Turn left\" гэвэл аль тийш эргэх вэ?",
+            "options": [
+              "Зүүн тийш",
+              "Баруун тийш",
+              "Шулуун явна"
+            ],
+            "answerIndex": 0
+          },
+          {
+            "id": "u3-q3",
+            "text": "\"How much is it?\" гэдгийг орчуулна уу.",
+            "options": [
+              "Энэ юу вэ?",
+              "Хэд вэ (үнэ)?",
+              "Хаана байна?"
+            ],
+            "answerIndex": 1
+          }
+        ]
+      }
+    }
+  ],
+  "users": [
+    {
+      "email": "demo@octolearn.mn",
+      "name": "Болд",
+      "password": "demo1234",
+      "role": "learner"
+    },
+    {
+      "email": "admin@octolearn.mn",
+      "name": "Админ",
+      "password": "admin1234",
+      "role": "admin"
+    }
+  ]
+}

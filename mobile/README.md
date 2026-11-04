@@ -1,56 +1,52 @@
-# Welcome to your Expo app 👋
+# OctoLearn — Mobile app
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+React Native (Expo SDK 58) + TypeScript + Expo Router. Pathway, видео хичээл, шалгалт, XP, статистиктай video course апп.
 
-## Get started
+## Ажиллуулах
 
-1. Install dependencies
-
-   ```bash
-   npm install
-   ```
-
-2. Start the app
-
-   ```bash
-   npx expo start
-   ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **src/app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
+Эхлээд backend асаалттай байх ёстой (`cd ../backend && npm run dev`, порт 4000).
 
 ```bash
-npm run reset-project
+cd mobile
+npm install
+npm start          # Expo Go-оор QR уншуулна (компьютертэй нэг Wi-Fi)
+npm run web        # эсвэл браузерт
 ```
 
-This command will move the starter code to the **example** directory and create a blank **src/app** directory where you can start developing.
+Development үед апп API-г өөрөө олно: Metro ажиллаж буй компьютерийн LAN IP-ийн 4000 порт (Android emulator дээр `10.0.2.2`, вэб дээр `localhost`). Build хийх эсвэл hosted backend руу заах бол `EXPO_PUBLIC_API_URL`-г тохируулна (`.env.example`).
 
-### Other setup steps
+Demo бүртгэл: нэвтрэх дэлгэц дээрх **"Demo-гоор турших"** товч (`demo@octolearn.mn / demo1234`).
 
-- To set up ESLint for linting, run `npx expo lint`, or follow our guide on ["Using ESLint and Prettier"](https://docs.expo.dev/guides/using-eslint/)
-- If you'd like to set up unit testing, follow our guide on ["Unit Testing with Jest"](https://docs.expo.dev/develop/unit-testing/)
-- Learn more about the TypeScript setup in this template in our guide on ["Using TypeScript"](https://docs.expo.dev/guides/typescript/)
+```bash
+npx tsc --noEmit   # typecheck
+npm run lint       # eslint (expo config)
+```
 
-## Learn more
+## Дэлгэцүүд
 
-To learn more about developing your project with Expo, look at the following resources:
+| Route | Юу хийдэг |
+|---|---|
+| `login`, `register` | Нэвтрэх / бүртгүүлэх, клиент талын validation, demo нэвтрэлт |
+| `(tabs)/index` | **Pathway — газрын зураг**: градиент дээд бар (прогресс "5/15 хичээл · 33%", XP, streak), бүлэг бүр өөр газар нутаг (тал 🌳 / тосгон 🏡 / эрэг ⛰️ / хаант улс 🏰), түгжээтэй бүлэг үүлэн дор, цэгүүдийг холбосон SVG зам (явсан хэсэг алтлаг), 3 төлөвтэй цэгүүд, цомтой шалгалтын цэг, түгжээтэй цэг дээр toast, идэвхтэй цэг рүү автоматаар гүйлгэх, pull-to-refresh, офлайн баннер |
+| `lesson/[id]` | `expo-video` тоглуулагч (тоглуулах/зогсоох, гүйлгэх, бүтэн дэлгэц), "Бүлэг 2 · Хичээл 3 / 5", тайлбар, үзсэн хувь; **"Дуусгах"** нь ≥ 90% үзсэний дараа идэвхжинэ → "+10 XP" overlay |
+| `quiz/[id]` | Нэг дэлгэцэнд нэг асуулт, ахицын бар, "Шалгах" → ногоон/улаан + зөв хариулт, үр дүнгийн дэлгэц (4 / 5, XP, "Үргэлжлүүлэх" / "Дахин өгөх") |
+| `(tabs)/leaderboard` | XP чансаа, өөрийн байр |
+| `(tabs)/profile` | Аватар, түвшин + ахиц, XP, streak, хичээл, тэнцсэн шалгалт, дундаж оноо, курсын ахиц, 7 хоногийн XP график, **харагдах байдал: Цайвар / Бараан / Систем** (төхөөрөмж дээр хадгалагдана), ахиц reset, гарах |
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+## Архитектур
 
-## Join the community
+```
+src/
+  app/          Expo Router дэлгэцүүд (Stack + Stack.Protected → auth / (tabs) / lesson / quiz)
+  api/          fetch client (timeout, Монгол алдааны мессеж), endpoints, хариуны төрлүүд
+  store/        Zustand: auth (SecureStore session), learning (pathway/profile, AsyncStorage кэш)
+  components/   ui/ (Button, Text, ProgressBar, Toast, …), pathway/, lesson/, quiz/, profile/
+  lib/          цэвэр туслах функцууд (pathway flatten / optimistic update), платформын storage
+  constants/    дизайны токенууд (light/dark өнгө, фонт, зай, radius)
+```
 
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+- **Үнэний эх сурвалж нь сервер.** Түгжээ, XP, шалгалтын дүнг сервер тооцоолно, апп зөвхөн `state`-ийг харуулна. Зөв хариулт урьдчилж ирэхгүй, хариулсны дараа `check`-ээр ирнэ.
+- **Optimistic update.** Хичээл/шалгалт дуусмагц pathway шууд шинэчлэгдэнэ (прогресс бар анимэйшнтэй, дараагийн цэг нээгдэнэ), дараа нь араас нь серверээс баталгаажуулна.
+- **Ахиц төхөөрөмж дээр хадгалагдана.** Session нь SecureStore-д (вэб дээр localStorage), pathway/profile нь AsyncStorage кэшэд байна. Аппыг хааж нээхэд сүүлийн төлөв шууд гарч, офлайн үед ч уншиж болно ("Офлайн байна" баннер).
+- **"90% үзсэн" = бодитоор үзсэн хугацаа.** `timeUpdate` хоорондын байгалийн алхмыг л тоолно (> 1.5 сек үсрэлт нь seek гэж тооцогдоно). Иймээс видеог төгсгөл рүү гүйлгэхэд "Дуусгах" нээгдэхгүй. Дууссан хичээлийг чөлөөтэй дахин үзэж болно.
+- **UI:** нэгдсэн дизайны токен, Nunito фонт (кирилл), "3D" товч, Reanimated анимэйшн (идэвхтэй цэгийн pulse, тоо "pop", урамшууллын burst), haptics, light/dark mode, ≥ 48pt дарах талбай, таблет/вэб дээр сунахгүй `maxWidth`, дэлгэц бүрт ачааллах/алдааны/хоосон төлөв.
